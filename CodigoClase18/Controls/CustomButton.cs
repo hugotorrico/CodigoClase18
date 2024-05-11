@@ -8,12 +8,11 @@ using System.Windows.Controls;
 
 namespace CodigoClase18.Controls
 {
-    public class CustomTextBlock : TextBlock
+    public class CustomButton : Button
     {
-        public CustomTextBlock()
+        public CustomButton()
         {
-            this.FontSize = 50;
-            this.HorizontalAlignment = System.Windows.HorizontalAlignment.Right;
+            this.Height = 100;
         }
     }
 }

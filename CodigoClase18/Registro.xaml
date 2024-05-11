@@ -14,6 +14,7 @@
         <TextBlock Text="Demo De Estilo Global"/>
         <TextBlock Text="Original"/>
         <Button Content="Botón Verde"></Button>
+        <local2:CustomButton Content="Botón Original"></local2:CustomButton>
         <local2:CustomTextBlock Text="Original"></local2:CustomTextBlock>
     </StackPanel>
 </Window>
