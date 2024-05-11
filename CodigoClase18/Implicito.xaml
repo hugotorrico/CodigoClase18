@@ -7,38 +7,21 @@
         mc:Ignorable="d"
         Title="Implicito" Height="450" Width="800">
     <Window.Resources>
-        <Style TargetType="TextBox" x:Key="CustomTextBoxStyle">
-            <Setter Property="Background" Value="LightGray"/>
+        <Style x:Key="BaseButtonStyle" TargetType="Button">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="14"/>
             <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="BorderBrush" Value="Black"/>
-            <Setter Property="Padding" Value="5"/>
         </Style>
-        <Style TargetType="Button" x:Key="CustomButtonStyle">
-            <Setter Property="Background" Value="LightBlue"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="Padding" Value="10"/>
-            <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="BorderBrush" Value="DarkBlue"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            Padding="{TemplateBinding Padding}">
-                            <ContentPresenter HorizontalAlignment="Center"
-                                          VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
+        <Style x:Key="RedButtonStyle" BasedOn="{StaticResource BaseButtonStyle}" TargetType="Button">
+            <Setter Property="Background" Value="Red"/>
+        </Style>
+
+        <Style x:Key="GreenButtonStyle" BasedOn="{StaticResource BaseButtonStyle}" TargetType="Button">
+            <Setter Property="Background" Value="Green"/>
         </Style>
     </Window.Resources>
     <StackPanel>
-        <Button Content="Click me" Style="{StaticResource CustomButtonStyle}"/>
-        <TextBox Text="Enter text here" Style="{StaticResource CustomTextBoxStyle}"/>
+        <Button Content="Red Button" Style="{StaticResource RedButtonStyle}"/>
+        <Button Content="Green Button" Style="{StaticResource GreenButtonStyle}"/>
     </StackPanel>
 </Window>
